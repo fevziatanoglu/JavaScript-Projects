@@ -1,0 +1,37 @@
+
+*{
+  box-sizing: border-box;
+  font-family:  'Silkscreen';
+}
+
+.game-screen{
+  
+  height: 100vh;
+  overflow: hidden;
+}
+
+.centered{
+    background-color: red;
+
+    text-align: center;
+
+    height: 75vh;
+    width: 75vw;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+   
+    transform: translate(-50%, -50%);
+  }
+
+  .box{
+    height: 50px;
+    width: 50px;
+  }
+
+  .key-btn,.enter-btn{
+   margin-right: 4px;
+  }
+
+
