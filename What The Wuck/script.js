@@ -2,10 +2,23 @@
 import getWord from "./getWord.js";
 
 
+
 //gamescreen
 const gameScreen = document.querySelector(".game-screen");
 
-const header = document.querySelector(".game-header")
+
+//language buttons
+const languageSelectField = document.querySelector(".language-btn-array");
+const languageButtonArray = Array.from(languageSelectField.children);
+languageButtonArray.forEach(languageButton => {languageButton.addEventListener("click" , ()=>getLanguageKey(languageButton))});
+
+//restart button
+const restartButton = document.querySelector(".restart-btn");
+restartButton.addEventListener("click",()=>{window.location.reload()});
+
+//github button
+const githubButton = document.querySelector(".github-btn");
+githubButton.addEventListener("click" , ()=>{window.open("https://github.com/fevziatanoglu/JavaScript-Projects/tree/main/Wordle%20Clone","_blank")})
 
 //keyboard keys
 const keys = document.querySelectorAll(".key-btn");
@@ -23,19 +36,31 @@ deleteKey.addEventListener("click" , ()=>getDeleteKey());
 const rows = document.querySelectorAll(".word-row");
 const rowArray = Array.from(rows);
 
+//bulunacak kelimenin dilini ayarlamak icin
+//currentLanguage bos olarak baslatılır
+let currentLanguage = "";
 
+//localstorage cagirilir
+const myLocalStorage = window.localStorage;
 
+//eger localstorage'da language kismi bos ise
+if(myLocalStorage.getItem("language") == ""){
+    myLocalStorage.setItem("language","TR");
+}
+    
+//currentLanguage , localestroage'dan gelen degere esitlenir
+currentLanguage = myLocalStorage.getItem("language");
+console.log(currentLanguage);
 
-let currentLanguage ="TR";
-
-
-
+//gameheader
+const header = document.querySelector(".game-header");
+header.innerHTML = `WHAT THE WUCK !? <img class="flag" src="./flags/${currentLanguage}.png" alt="en-flag" style="pointer-events: none;">`;
 
 
 
 //api'dan kelime al
 //alinan kelimeyi buyuk harf yap
-let word = await getWord(currentLanguage);
+let word = await getWord(myLocalStorage.getItem("language"));
 
 //alinan kelimenin harflerinden array
 let wordArray = word.split("");
@@ -115,6 +140,9 @@ if(boxIndex ==5){
     //kelimenin icinde bulunan ayni indexteki harf ile karsilastirir
     for (let index = 0; index < 5; index++) {
 
+        setTimeout(() => {
+            
+        }, 1000);
         //ilgili turdaki row cagirilir
         const currentRow = rowArray[tour];
 
@@ -196,6 +224,30 @@ function getDeleteKey(){
 
 
     }}
+
+
+
+
+
+
+
+
+
+
+    async function getLanguageKey(key){
+
+
+        //tiklanılan dil buttonunun icindeki text dil degerini changeLanguage olarak isaretler
+        const changeLanguage = key.children[0].children[0].children[0].innerHTML;
+        console.log(changeLanguage)
+        //localstorage'da language kismini isaretlenen dil iceriği ile degistirir
+        myLocalStorage.setItem("language" , changeLanguage);   
+        
+        //sayfayı yeniler
+        window.location.reload();
+
+    }
+
 
 
 
@@ -309,28 +361,6 @@ function endGame(){
 
 
 
-////////////////////////////////developing now////////////////////////////////////////////
-const languageSelectField = document.querySelector(".language-btn-array");
-const languageButtonArray = Array.from(languageSelectField.children);
 
-languageButtonArray.forEach(languageButton => {
-
-   languageButton.addEventListener("click" , async function(e){
-    e.preventDefault();
-
-    if(boxIndex ==0 && tour ==0){
-    console.log()
-    const changeLanguage =e.target.children[0].children[0].children[0].innerHTML;
-    currentLanguage = changeLanguage;    
-    word = await getWord(currentLanguage);
-    wordArray = word.split("");
-        console.log(word);
-
-    header.innerHTML = `MY WORDLE CLONE <img class="flag" src="./flags/${currentLanguage}.png" alt="en-flag" style="pointer-events: none;">`;
-    }
-    else{
-        console.log("You can change languages when beggining the game!")
-    }
-})});
 ///////////////////////////////developing now////////////////////////////////////////////////////////////
 
