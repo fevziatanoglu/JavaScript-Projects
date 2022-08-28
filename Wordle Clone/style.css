@@ -5,10 +5,12 @@
 }
 
 .game-screen{
-  
-  height: 100vh;
-  overflow: hidden;
+width: 100wh;
+
+overflow: hidden;
 }
+
+
 
 .centered{
     background-color: red;
@@ -34,4 +36,63 @@
    margin-right: 4px;
   }
 
+.flag{
+  width: 60px;
+  height: 35px;
+}
+
+.navbar{
+  background-color: black;
+  max-width: vw;
+}
+
+/* <ul class="dropdown-menu language-btn-array">
+
+              <!-- EN button -->
+              <li class="language-btn">
+                <div class="dropdown-item" style="pointer-events: none;">
+                  <div class="row" style="pointer-events: none;">
+
+                    <div class="col text-center">EN</div style="pointer-events: none;">
+
+                    <img class="col flag" src="./flags/EN.png" alt="en-flag" style="pointer-events: none;">
+
+                  </div>
+                </div>
+              </li>
+              <!-- EN button -->
+
+               <!-- DE button -->
+               <li class="language-btn">
+                <div class="dropdown-item" style="pointer-events: none;">
+                  <div class="row" style="pointer-events: none;">
+
+                    <div class="col text-center">DE</div style="pointer-events: none;">
+
+                    <img class="col flag" src="./flags/DE.png" alt="en-flag" style="pointer-events: none;">
+
+                  </div>
+                </div>
+              </li>
+              <!-- DE button -->             
+
+
+
+              <!-- TR button -->
+              <li class="language-btn">
+                <div class="dropdown-item" style="pointer-events: none;">
+                  <div class="row" style="pointer-events: none;">
+
+                    <div class="col text-center">TR</div style="pointer-events: none;">
+
+                    <img class="col flag" src="./flags/TR.png" alt="en-flag" style="pointer-events: none;">
+
+                  </div>
+                </div>
+              </li>
+              <!-- TR button -->    
+
+
+            </ul>
+            <!-- language selection --> */
 

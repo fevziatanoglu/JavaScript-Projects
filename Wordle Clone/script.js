@@ -1,10 +1,16 @@
-import getWord from "./wordAPI.js";
+// import getWord from "./wordAPI.js";
+import getWord from "./getWord.js";
 
+
+//gamescreen
 const gameScreen = document.querySelector(".game-screen");
+
+const header = document.querySelector(".game-header")
 
 //keyboard keys
 const keys = document.querySelectorAll(".key-btn");
 const keyArray = Array.from(keys);
+keyArray.forEach(key=> {key.addEventListener("click" , ()=>getKey(key));});
 
 const enterKey = document.querySelector(".enter-btn");
 enterKey.addEventListener("click" , ()=>getEnterKey());
@@ -20,13 +26,19 @@ const rowArray = Array.from(rows);
 
 
 
+let currentLanguage ="TR";
+
+
+
+
+
 
 //api'dan kelime al
 //alinan kelimeyi buyuk harf yap
-let word = await getWord().then(response => response.toUpperCase());
+let word = await getWord(currentLanguage);
 
 //alinan kelimenin harflerinden array
-const wordArray = word.split("");
+let wordArray = word.split("");
 console.log(word);
 
 
@@ -49,13 +61,14 @@ let currentKeyArray =[];
 
 
 
-keyArray.forEach(key=> {key.addEventListener("click" , ()=>getKey(key));});
+
 
 
 
 
 
 function getKey(key){
+    console.log(word);
     //sirasi gelen row un icindeki , sirasi gelen box'un icine
     //klavyeden tikladiğimiz tusun sahip olduğu harfi , ilgili box'a yazan function
 
@@ -159,21 +172,35 @@ if(boxIndex ==5){
 function getDeleteKey(){
     //yazilan harfi silen func
 
+
+
+
     //eger herhangi bir harf yazılıysa
     //yani boxIndex en az 1 kere arttirilmis ise
     if(boxIndex>0){
-        
+
+        //bir onceki box'u isaretlemek icin
+        //box indexi 1 azalt
+        boxIndex--;
+
         const currentRow = rowArray[tour];
-        const currentBox = currentRow[boxIndex]; 
+        const currentBox = currentRow.children[boxIndex]; 
+
+
 
         //ilgili kutunun icindeki harfi sil
         currentBox.textContent = "";
+
         //getKey'de isaretlenen keyi arrayden sil
         currentKeyArray.pop();
-        //silinen box'un indexine geri donmek icin
-        //box indexi 1 azalt
-        boxIndex--;
+
+
     }}
+
+
+
+
+
 
 
 
@@ -194,7 +221,7 @@ function nextTour(){
         //1 saniye sonra
         //endGame func'u cagir
         setTimeout(() => {
-            endGame();
+            // endGame();
         }, 1000);
         
         //eger oyun devam ediyor ise 
@@ -222,6 +249,11 @@ function nextTour(){
 
         currentBox.classList.add("border-light");
        }}}
+
+
+
+
+
 
 
 
@@ -271,4 +303,34 @@ function endGame(){
 
 
 
+
+
+
+
+
+
+////////////////////////////////developing now////////////////////////////////////////////
+const languageSelectField = document.querySelector(".language-btn-array");
+const languageButtonArray = Array.from(languageSelectField.children);
+
+languageButtonArray.forEach(languageButton => {
+
+   languageButton.addEventListener("click" , async function(e){
+    e.preventDefault();
+
+    if(boxIndex ==0 && tour ==0){
+    console.log()
+    const changeLanguage =e.target.children[0].children[0].children[0].innerHTML;
+    currentLanguage = changeLanguage;    
+    word = await getWord(currentLanguage);
+    wordArray = word.split("");
+        console.log(word);
+
+    header.innerHTML = `MY WORDLE CLONE <img class="flag" src="./flags/${currentLanguage}.png" alt="en-flag" style="pointer-events: none;">`;
+    }
+    else{
+        console.log("You can change languages when beggining the game!")
+    }
+})});
+///////////////////////////////developing now////////////////////////////////////////////////////////////
 
