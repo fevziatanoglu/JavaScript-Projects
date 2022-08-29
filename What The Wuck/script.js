@@ -18,7 +18,7 @@ restartButton.addEventListener("click",()=>{window.location.reload()});
 
 //github button
 const githubButton = document.querySelector(".github-btn");
-githubButton.addEventListener("click" , ()=>{window.open("https://github.com/fevziatanoglu/JavaScript-Projects/tree/main/Wordle%20Clone","_blank")})
+githubButton.addEventListener("click" , ()=>{window.open("https://github.com/fevziatanoglu/JavaScript-Projects/tree/main/What%20The%20Wuck","_blank")})
 
 //keyboard keys
 const keys = document.querySelectorAll(".key-btn");
@@ -127,7 +127,7 @@ function getKey(key){
 
 
 
-function getEnterKey(){
+async function getEnterKey(){
     //enter key'e tikladigimizda
     //girilen kelimeyi sorgulayan funciton
 
@@ -139,10 +139,11 @@ if(boxIndex ==5){
     //ilgili turdaki row'un icindeki her box'un harfini
     //kelimenin icinde bulunan ayni indexteki harf ile karsilastirir
     for (let index = 0; index < 5; index++) {
+        await waitFor(400);
 
-        setTimeout(() => {
-            
-        }, 1000);
+        // const wait = await new Promise(response => setTimeout(response,250));
+        
+
         //ilgili turdaki row cagirilir
         const currentRow = rowArray[tour];
 
@@ -158,8 +159,14 @@ if(boxIndex ==5){
         if(currentTrueLetter == currentLetter){
 
          //harfin parrent'i olan box'un arka plani yesil yapılır
-         currentBox.classList.add("bg-success");
-         currentBox.classList.add("border-success");
+            
+                currentBox.classList.add("bg-success");
+                currentBox.classList.remove("border-light");
+                currentBox.classList.add("border-success");
+           
+
+
+         
 
         //point , daha sonra oyunun kazanilip
         //kazanilmadigini sorgulamak icin 1 arttirilir
@@ -173,6 +180,7 @@ if(boxIndex ==5){
         //ilgili box'un arka planini sari yap
         currentBox.classList.add("bg-warning");
 
+
         //getKey() in icinde daha sonra kullanılmak icin alinin keylerden
         //ilgili indextekini cagir ve arka planını beyaz yap
         currentKeyArray[index].classList.add("bg-light");
@@ -183,6 +191,9 @@ if(boxIndex ==5){
        //eger harfler ayni degil ve 
        //aranan kelime girilen harfi icermiyor ise
        else{
+
+
+        currentBox.classList.add("bg-secondary")
 
         //ilgili indexteki key'in 
         //opacity'sini dusur
@@ -258,7 +269,7 @@ function getDeleteKey(){
 
 
 
-function nextTour(){
+async function nextTour(){
     //enterKey den sonra diger rowa gecmeyi saglayan func
 
 
@@ -273,7 +284,7 @@ function nextTour(){
         //1 saniye sonra
         //endGame func'u cagir
         setTimeout(() => {
-            // endGame();
+            endGame();
         }, 1000);
         
         //eger oyun devam ediyor ise 
@@ -296,6 +307,7 @@ function nextTour(){
         //ilgili turdaki row'un box'larinin
         //border'ini beyaz yap
         for (let index = 0; index < 5; index++) {
+        await waitFor(250);
         const currentRow = rowArray[tour];
         const currentBox = currentRow.children[index];
 
@@ -319,10 +331,10 @@ function endGame(){
 
     //kazanma ekrani
     const youWinScreen = document.createElement("div");
-    youWinScreen.innerHTML = `<div class=" opacity-100 bg-success centered fw-bold  text-center border border-5 rounded fixed display-2 p-5">
-    <div>YOU WIN!! <br> Congratulation<br><p class="text-light display-1 fw-bold">"${word}"</p> </div>
-    <hr class="m-5 opacity-100">
-    <div class="opacity-100 btn bg-dark text-light fw-bold fs-1 p-5" style="height: 20vh; width: 50vw;;">Play Again</div>
+    youWinScreen.innerHTML = `<div class=" opacity-100 bg-success centered fw-bold  text-center border border-5 rounded fixed display-6 p-5   justify-content-center">
+    <div>YOU WIN!!<br>:)<p class="text-light display-5 fw-bold">"${word}"</p> </div>
+    <hr class="mx-5">
+    <div class=" btn bg-dark text-light fw-bold fs-1 d-flex justify-content-center align-items-center " style="">Play Again</div>
     </div>`;
 
     //ekranin icindeki butona tekrar basşatma func'u ata
@@ -339,10 +351,10 @@ function endGame(){
     //gameover ekrani
     const gameOverScreen = document.createElement("div");
 
-    gameOverScreen.innerHTML = `<div class=" opacity-75 bg-secondary centered fw-bold display-2 text-center border border-5 rounded fixed">
-    <div class="opacity-100">Game Over <br>Your word was <br><p class="text-light display-1 fw-bold">${word}</p> </div>
-    <hr class="m-5 opacity-100">
-    <div class="opacity-100 btn bg-dark text-light fw-bold fs-1 p-5" style="height: 20vh; width: 50vw;;">Play Again</div>
+    gameOverScreen.innerHTML = `<div class=" opacity-100 bg-danger centered fw-bold  text-center border border-5 rounded fixed display-6 p-5   justify-content-center">
+    <div>Nice Try!!<br>:(<p class="text-light display-5 fw-bold">"${word}"</p> </div>
+    <hr class="mx-5">
+    <div class=" btn bg-dark text-light fw-bold fs-1 d-flex justify-content-center align-items-center " style="">Play Again</div>
     </div>`;
     //ilgili ekrani oyun ekranina ekle
     //gameover ekraninin icindeki buttona tekrar baslatan func'u ata
@@ -355,8 +367,10 @@ function endGame(){
 
 
 
-
-
+    //belirtilen saniye geçtikten sonra , boş bir promise return eder
+ async function waitFor(second){
+    return new Promise(response => setTimeout(response,second));
+ }
 
 
 
