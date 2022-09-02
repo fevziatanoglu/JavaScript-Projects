@@ -2,14 +2,26 @@
     overflow-x: hidden;
 }
 .hole{
+    overflow: visible;
     
     background: black;
 
     border-radius: 50%;
 
-    min-height: 50px;
+    height: 65px;
+    width: 90px;
+
+    min-height: 60px;
     min-width: 90px;
     
+
+
+}
+
+.mole{
+    display: none;
+    height: 100px;
+  
 }
 
 .pause-btn{

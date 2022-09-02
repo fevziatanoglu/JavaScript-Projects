@@ -23,7 +23,7 @@ resetButton.addEventListener("click", ()=>getResetButton());
 
 let isPunch = false;
 let holeIndex =0;
-let gamespeed = 1000;
+let gamespeed = 750;
 let score =0;
 let time = 60;
 let isStart = false;
@@ -34,16 +34,16 @@ function getRandomHole(){
 
 const randomIndex = Math.floor(Math.random() * holeArray.length);
 holeIndex = randomIndex;
-holeArray[holeIndex].style.background = "red";
+holeArray[holeIndex].children[0].style.display = "block"
 
 }
 
 
 function clickHole(hole){
-    if(hole.style.background =="red"){
+    if(hole.children[0].style.display =="block" && isStart){
     clearHole();
     score++;
-    console.log(score);
+    scoreText.innerHTML = `Score: ${score}`
     }
    
 
@@ -51,7 +51,7 @@ function clickHole(hole){
 
 
 function clearHole(){
-        holeArray[holeIndex].style.background = "black";
+        holeArray[holeIndex].children[0].style.display = "none";
     }
 
 
@@ -65,7 +65,7 @@ function clearHole(){
         console.log(gamespeed);
         }
 
-    }, 1500);
+    }, gamespeed);
 
 
     // time and score control
