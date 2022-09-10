@@ -1,207 +1,140 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Memory Game</title>
+  <title>Memory Game</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="style.css">
-    <!-- css -->
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- css -->
 
-    <!-- boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-     <!-- boostrap -->
+  <!-- boostrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- boostrap -->
 </head>
-  <body class="bg-dark">    
 
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-light">
+<body class="bg-dark">
 
-        <!-- navbar-container -->
-        <div class="container-fluid">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-light">
 
-          <!-- navbar-icon -->
-          <div class="navbar-brand fs-3 fw-bold" href="#">Game Name</div>
-          <!-- navbar-icon -->
+    <!-- navbar-container -->
+    <div class="container-fluid">
 
-          <!-- toggler-button -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- toggler-button -->
+      <!-- navbar-icon -->
+      <div class="navbar-brand fs-3 fw-bold" href="#">Game Name</div>
+      <!-- navbar-icon -->
 
-          <!-- contents-container -->
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- toggler-button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- toggler-button -->
 
-            <!-- content-list -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <!-- contents-container -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-              <!-- restart button -->
-              <li class="nav-item">
-                <div class="nav-link btn restart-btn">Restart</div>
+        <!-- content-list -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <!-- start button -->
+          <li class="nav-item">
+            <div class="nav-link btn start-btn btn-light fw-bold">START</div>
+          </li>
+          <!-- start button-->
+
+          <!-- restart button -->
+          <li class="nav-item">
+            <div class="nav-link btn restart-btn fw-bold">RESTART</div>
+          </li>
+          <!-- restart button-->
+
+
+
+          <!-- levels button -->
+          <li class="nav-item dropdown">
+            <div class="nav-link dropdown-toggle btn btn-light fw-bold" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              LEVEL
+            </div>
+            <ul class="dropdown-menu">
+              <li>
+                <div class="dropdown-item fw-bold btn-4x3">4x3 cards</div>
               </li>
-              <!-- restart button-->
-
-              <!-- content-2 -->
-              <li class="nav-item">
-                <div class="nav-link btn">content2</div>
+              <li>
+                <div class="dropdown-item fw-bold btn-4x4">4x4 cards</div>
               </li>
-              <!-- content-2 -->
-
-              <!-- content-3 -->
-              <li class="nav-item dropdown">
-                <div class="nav-link dropdown-toggle btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    
-                  Dropdown
-                </div>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+              <li>
+                <div class="dropdown-item fw-bold btn-4x5">4x5 cards</div>
               </li>
-              <!-- content-3 -->
 
-            
+
             </ul>
-            <!-- content-list -->
-            
-          </div>
-          <!-- contents-container -->
+          </li>
+          <!-- levels button -->
 
-        </div>
-        <!-- navbar-container -->
-
-      </nav>
-    <!-- navbar -->
+          <!-- github button -->
+          <li class="nav-item">
+            <div class="nav-link btn github-btn fw-bold">GITHUB</div>
+          </li>
+          <!-- github button-->
 
 
+        </ul>
+        <!-- content-list -->
 
-    <!-- game-screen -->
-    <div class="centered bg-success d-flex align-items-center justify-content-center">
-
-    
-        <!-- card-container -->
-        <div class="justify-content-center game-container p-5">
-
-        <!-- card-row 1 -->
-        <div class="memory-card-row mt-5 pagination justify-content-center "> 
-
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card1">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">a</div>
-          </div>
-
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card2">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">a</div>
-          </div>
-          
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card3">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">b</div>
-          </div>
-          
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card4">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">b</div>
-          </div>
-          
-        </div> 
-        <!-- card-row 1 -->
-
-        <!-- card-row 2 -->
-        <div class="memory-card-row  pagination justify-content-center "> 
-
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card5">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">a</div>
-          </div>
-
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card6">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">a</div>
-          </div>
-          
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card7">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">b</div>
-          </div>
-          
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card8">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">b</div>
-          </div>
-          
-        </div> 
-        <!-- card-row 2 -->
-
-        <!-- card-row 3 -->
-        <div class="memory-card-row pagination justify-content-center "> 
-
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card9">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">a</div>
-          </div>
-
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card10">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">a</div>
-          </div>
-          
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card11">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">b</div>
-          </div>
-          
-          <div class="memory-card rounded  m-1 fw-bold fs-2 text-secondary  border border-4 d-flex justify-content-center align-items-center" id="card12">
-
-            <div class="front-face">?</div>
-
-            <div class="back-face">b</div>
-          </div>
-          
-        </div> 
-        <!-- card-row 3 -->
-
-        </div>
-        <!-- card-container -->
+      </div>
+      <!-- contents-container -->
 
     </div>
-    <!-- game-screen -->
+    <!-- navbar-container -->
 
-    
+  </nav>
+  <!-- navbar -->
+
+
+
+  <!-- game-screen -->
+  <div class="game-screen centered bg-success  justify-content-center">
+
+    <!-- game data -->
+    <div class="game-data text-light text-center p-2 fw-bold display-6"> Score time flip will be write here</div>
+    <!-- game data -->
+
+    <!-- level -->
+    <div class=" level-text text-light text-center display-2 fw-bold">4x4</div>
+    <!-- level -->
+
+    <!-- game-container -->
+    <div class="game-container mt-1">
+
+
+
+    </div>
+    <!-- game-container -->
+
+  </div>
+  <!-- game-screen -->
 
 
 
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-  </body>
+
+  <!-- script -->
+  <script src="script.js"></script>
+  <!-- script -->
+
+  <!-- boostrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <!-- boostrap -->
+</body>
+
 </html>

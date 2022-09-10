@@ -99,13 +99,7 @@
     transform: rotateY(180deg);
 }
 
-.front-face{
-    z-index: 1;
-}
 
-.back-face{
-    z-index: -1;
-}
 
 .centered{
     
