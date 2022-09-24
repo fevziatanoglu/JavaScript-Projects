@@ -1,0 +1,39 @@
+
+
+.game-container{
+    height: 500px;
+    width: 100%; 
+    align-self: center;
+}
+
+.button{
+    height: 100px;
+    width: 100px;
+    opacity: 50%;
+    
+    
+
+
+}
+
+/* .button:hover{ */
+    /* opacity: 75%; */
+    /* border: 2px solid; */
+/* } */
+
+
+.centered{
+    background-color: red;
+
+    text-align: center;
+
+  
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+   
+    transform: translate(-50%, -50%);
+  }
+
+  
