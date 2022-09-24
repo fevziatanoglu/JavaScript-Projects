@@ -8,14 +8,19 @@
 
 .button{
     height: 100px;
-    width: 100px;
+    min-width: 100px;
     opacity: 50%;
-    
-    
 
-
+    
 }
 
+@media screen and (max-width: 900px) {
+    .button {
+        height: 50px;
+        min-width: 50px;
+        opacity: 50%;
+    }
+  }
 /* .button:hover{ */
     /* opacity: 75%; */
     /* border: 2px solid; */
