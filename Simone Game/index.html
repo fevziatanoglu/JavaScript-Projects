@@ -8,16 +8,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
   <body class="bg-dark text-light  ">
-    <h1>Simone Game</h1>
 
-    <div class="turn-text text-center display-6 m-1">Click to start</div>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-light sticky-top">
+      <div class="container-fluid ">
+        <!-- navbar title -->
+        <a class="navbar-brand " href="#">
+          <div class="d-flex ">
+
+            <div class="fs-2 mx-1" >
+              Simone Game
+            </div>
+
+            <div class="fs-6  pt-3">
+               Colors&Places
+            </div>
+          </div>
+        </a>
+        <!-- navbar title -->
+
+        <!-- toggler button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- toggler button -->
+
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <!-- contents list -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+              <button class="start-btn-navbar btn btn-light ">Start</button>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#">Link</a> -->
+              <button class="restart-btn btn btn-light">Restart</button>
+            </li>
+            <li class="nav-item dropdown">
+              <button class="github-btn btn btn-light ">GitHub</button>
+            </li>
+          </ul>
+          <!-- contents list -->
+           
+          <div class="text-dark fw-bold">
+            Thanks For Playing :)
+          </div>
+          
+        </div>
+      </div>
+    </nav>
+    <!-- navbar -->
+
+    
+
+     <!-- game container -->
+    <div class="game-container self-align-center mt-5">
+    <!-- game datas -->
+    <div>
+    <div class="turn-text text-center display-6 m-1">Click to start!</div>
 
     <div class="tour-text text-center display-6">Tour : 0</div>
 
     <div class="according-text text-center display-5 fw-bold">According to ...</div>
+    </div>
 
+    <!-- game datas -->
 
-    <div class="game-container self-align-center bg-dark">
         <div class="button-container d-flex justify-content-center">
         <div class="button m-2 mt-5 rounded "></div>
         <div class="button m-2 mt-5 rounded "></div>
@@ -25,10 +83,16 @@
         <div class="button m-2 mt-5 rounded "></div>
 
         </div>
-         <button class="start-btn btn btn-light px-5 m-5 fs-1">Start</button>
+         
+        <div class="mt-5 d-flex justify-content-center">
+
+      
+          <button class="start-btn btn btn-light px-5 fs-2 fw-bold ">START</button>
+        </div>
 
          
     </div>
+    <!-- game container -->
 
    
     <script src="script.js"></script>

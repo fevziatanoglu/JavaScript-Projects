@@ -28,7 +28,7 @@
 
 
 .centered{
-    background-color: red;
+    
 
     text-align: center;
 
@@ -42,3 +42,14 @@
   }
 
   
+  @keyframes click-to-start {
+   0%{
+    color: white;
+   }
+
+   50%{
+    color: black;
+   }
+
+   100%{color: white;}
+  }

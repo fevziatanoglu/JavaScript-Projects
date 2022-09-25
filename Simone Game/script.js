@@ -10,10 +10,21 @@ const turnText = document.querySelector(".turn-text");
 const tourText = document.querySelector(".tour-text");
 const accordingText = document.querySelector(".according-text");
 
+// start button navbar
+const startButtonNavbar = document.querySelector(".start-btn-navbar");
+startButtonNavbar.addEventListener("click", () => { if (!isStart) { getStart(); isStart = true; } });
+
 // start button
 const startButton = document.querySelector(".start-btn");
-startButton.addEventListener("click", () => { if (!isStart) { getStart(); isStart = true; } });
+startButton.addEventListener("click", () => { if (!isStart) { getStart(); isStart = true; startButton.style.opacity = "50%"; turnText.style = "animation:none"; clearInterval(changeColorsIntervial)} });
 
+// restart button
+const restartButton = document.querySelector(".restart-btn");
+restartButton.addEventListener("click", getRestartButton);
+
+// github button
+const githubButton = document.querySelector(".github-btn");
+githubButton.addEventListener("click", () => { window.open("https://github.com/fevziatanoglu/JavaScript-Projects") })
 
 // variables
 let isStart = false;
@@ -31,8 +42,14 @@ buttonArray.forEach(button => {
     button.addEventListener("click", () => { userClick(button); })
 });
 
-// when page start get random colored buttons
-changeColors();
+// before the start of game
+// constantly change colors
+// and light up click to start text
+let changeColorsIntervial =  setInterval(() => {
+    changeColors();
+}, 1000);
+
+clickToStartText();
 
 
 // light up related button
@@ -211,7 +228,7 @@ function gameOver() {
     isUserTurn = false;
 
     const gameOverScreen = document.createElement("div");
-    gameOverScreen.className = "game-over centered p-5 fw-bold display-2 text-light border border-4 border-dark";
+    gameOverScreen.className = "game-over centered p-5 my-5 fw-bold display-2 text-light bg-success  border border-4 border-light";
 
     const gameOverTexts = document.createElement("div");
     gameOverTexts.innerHTML = `Game Over <br><br> Score:${tour} `
@@ -244,10 +261,20 @@ function changeColors() {
 
         colorArray.splice(randomIndex, 1);
     });
-
-
-
-
-
 }
+
+function clickToStartText() {
+        turnText.style = "animation: click-to-start 2s infinite"
+}
+
+
+
+
+    
+
+   
+
+    
+
+
 
