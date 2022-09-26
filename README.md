@@ -6,7 +6,7 @@ What the wuck is a puzzle game that you try to find 5 letter words.
 <br/>
 It has 3 language options ; English , Germany and Turkish.
 <br/>
-We have 5 change to find word.
+We have 5 chance to find word.
 <br/>
 And we can see related letters on keyboard.
 
@@ -19,9 +19,9 @@ Memory game is a classic card memory game.
 <br/>
 It has 3 level options ; 3x4 , 4x4 and 5x5.
 <br/>
-Game has flip counter and , time counter. We can see them end game screen.
+Game has flip counter and time counter. We can see them end game screen.
 <br/>
-When started to click button , card created one by one according to related level option.
+When clicked to start button , card created one by one according to related level option.
 <br/>
 When click to cards , they flip and if two cards are same , those cards became constant.
 <br/>
@@ -53,13 +53,13 @@ Rules randomly determined every user turn and it writes on the screen.
 
 ## CurrEx
 
-Currex is exchange rate app
+Currex is exchange rate app.
 <br/>
-It gets data by an API
+It gets data by an API.
 <br/>
-You can chose related currency 
+You can chose related currency .
 <br/>
-And see exchange rate according to different currencies
+And see exchange rate according to different currencies.
 
 
 ![image](https://user-images.githubusercontent.com/95905332/192374819-0efd2f4b-aba2-4dcf-bf47-50c9d06f477c.png)
@@ -68,7 +68,7 @@ And see exchange rate according to different currencies
 
 ## Whack a Mole
 
-This game is a whack a mole clone
+This game is a whack a mole clone.
 <br/>
 We try to click moles' head.
 <br/>
