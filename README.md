@@ -1,6 +1,6 @@
 # JavaScript Projects
 
-##What the Wuck!?
+## What the Wuck!?
 
 What the wuck is a puzzle game thet you try to find 5 letter words. 
 <br/>
