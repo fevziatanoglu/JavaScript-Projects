@@ -70,11 +70,9 @@ And see exchange rate according to different currencies
 
 This game is a whack a mole clone
 <br/>
-We try to click head of moles
-<br/>
 We try to click moles' head.
 <br/>
-Moles oncovers randomly.
+Moles uncovers randomly.
 <br/>
 It has 2 counter ; click and time counter. You can see on end game screen.
 <br/>
