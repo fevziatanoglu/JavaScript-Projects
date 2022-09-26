@@ -51,6 +51,38 @@ Rules randomly determined every user turn and it writes on the screen.
 ![image](https://user-images.githubusercontent.com/95905332/192373345-2a1c622a-e601-4768-8ddf-92855bd79247.png)
 ![image](https://user-images.githubusercontent.com/95905332/192373407-388ec3e8-2f1a-4769-8791-108622694352.png)
 
+## CurrEx
+
+Currex is exchange rate app
+<br/>
+It gets data by an API
+<br/>
+You can chose related currency 
+<br/>
+And see exchange rate according to different currencies
+
+
+![image](https://user-images.githubusercontent.com/95905332/192374819-0efd2f4b-aba2-4dcf-bf47-50c9d06f477c.png)
+![image](https://user-images.githubusercontent.com/95905332/192374847-c374ef2e-1bb7-49ab-9429-313204d047d7.png)
+
+
+## Whack a Mole
+
+This game is a whack a mole clone
+<br/>
+We try to click head of moles
+<br/>
+We try to click moles' head.
+<br/>
+Moles oncovers randomly.
+<br/>
+It has 2 counter ; click and time counter. You can see on end game screen.
+<br/>
+
+![image](https://user-images.githubusercontent.com/95905332/192375342-bfde9858-d7ff-44bd-a593-0d37fd480225.png)
+![image](https://user-images.githubusercontent.com/95905332/192375373-f2bd190c-dd24-40dd-8224-1049b8263c79.png)
+
+
 
 
 
